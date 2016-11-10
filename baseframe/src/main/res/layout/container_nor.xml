@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentId"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/com_bg_ui"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!-- custom app title -->
+    <com.baseframe.core.widget.ComTitleLayout
+        android:id="@+id/comTitleId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- add content -->
+
+</LinearLayout>

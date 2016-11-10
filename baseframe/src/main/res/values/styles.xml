@@ -38,4 +38,16 @@
         <item name="android:layout_height">match_parent</item>
     </style>
 
+
+
+    <style name="comNewMsgDotOnlyStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/com_red_dot_only</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:padding">0dip</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">0sp</item>
+    </style>
+
 </resources>

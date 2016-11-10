@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="commentTitle">
+        <attr name="text" format="string" />
+        <attr name="backButtonEnable" format="boolean" />
+        <attr name="middleTextViewEnable" format="boolean" />
+        <attr name="rightButtonEnable" format="boolean" />
+        <attr name="imageButtonEnable" format="boolean" />
+        <attr name="imageButtonBackground" format="reference" />
+        <attr name="rightButtonBackground" format="reference" />
+    </declare-styleable>
+</resources>

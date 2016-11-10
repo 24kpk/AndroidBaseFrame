@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 标题强调文字-->
+    <color name="baseGrayMore">#4d4d4d</color>
+    <!-- 正文主要文字-->
+    <color name="baseGrayNor">#656565</color>
+    <!-- 标注提示文字1-->
+    <color name="baseGrayLit">#989898</color>
+    <!-- 标注提示文字2-->
+    <color name="baseGraySupLit">#e5e5e5</color>
+    <!-- 大面积背景 灰色-->
+    <color name="baseGrayBg">#f3f3f3</color>
+    <!-- 灰色分割线(或者非使能状态或者按下状态) 灰色-->
+    <color name="baseGrayDi">#e4e6e8</color>
+
+
+    <!-- 标准色深绿色--> <!-- Added -->
+    <color name="baseGreenMore">#138b78</color>
+    <!-- 标准色浅绿色-->
+    <color name="baseGreenNor">#4dbbaa</color>
+    <!-- 标准色更浅的浅绿色-->
+    <color name="baseGreenLit">#77ccbf</color>
+    <!-- 标准色最浅的浅绿色-->
+    <color name="baseGreenSupLit">#c6eae5</color>
+    <!-- 辅助色橙色-->
+    <color name="baseOrangeNor">#ff9849</color>
+
+
+    <!-- ////////////////////Others/////////////////////// -->
+    <!-- 白色 --> <!-- Added -->
+    <color name="baseWhite">#ffffff</color>
+    <!-- 黑色半透明1 --> <!-- Added -->
+    <color name="baseBlackTran1">#30000000</color>
+    <!-- 黑色半透明2 --> <!-- Added -->
+    <color name="baseBlackTran2">#8f000000</color>
+    <!-- 黑色状态栏颜色 --> <!-- Added -->
+    <color name="baseBlackStateColor">#18212a</color>
+</resources>

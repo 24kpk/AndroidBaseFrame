@@ -20,4 +20,34 @@
     <color name="material_red">#ffF44336</color>
     <color name="material_green">#ff4CAF50</color>
     <color name="material_blue">#ff03A9F4</color>
+
+
+    <!-- 主调色 -->
+    <color name="colorPrimary">@color/baseGreenNor</color>
+    <color name="colorPrimaryDark">@color/baseGreenMore</color>
+    <color name="colorAccent">@color/baseGrayMore</color>
+    <!-- 整个系统的风格颜色 -->
+    <color name="com_app_color">@color/colorPrimary</color>
+    <color name="com_app_black">@color/baseGrayMore</color>
+    <color name="com_app_while">@color/baseWhite</color>
+    <!-- 所有UI页面使用的背景色 -->
+    <color name="com_bg_ui">@color/baseWhite</color>
+    <!-- 所有UI页面使用的灰色背景色 -->
+    <color name="com_bg_gray_ui">@color/baseGrayBg</color>
+    <!-- 所有UI页面使用的按下半透明背景色 -->
+    <color name="com_bg_click_transparent">@color/baseBlackTran1</color>
+    <!-- 所有UI页面使用的按下灰色背景色 -->
+    <color name="com_bg_click_gray_ui">@color/baseGrayDi</color>
+
+    <!-- 字体颜色统一定义 -->
+    <!-- 纯白 -->
+    <color name="ctv_white">@color/baseWhite</color>
+    <!-- 淡黑色 -->
+    <color name="ctv_black_2">@color/baseGrayMore</color>
+    <!-- 灰色 -->
+    <color name="ctv_black_3">@color/baseGrayNor</color>
+    <!-- 淡灰色 -->
+    <color name="ctv_black_4">@color/baseGrayLit</color>
+    <!-- 最淡灰色 -->
+    <color name="ctv_black_5">@color/baseGraySupLit</color>
 </resources>
