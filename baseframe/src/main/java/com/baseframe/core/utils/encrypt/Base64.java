@@ -184,7 +184,6 @@ public class Base64 {
 
 	/**
 	 * decode the base 64 encoded String data.
-	 * 
 	 *
 	 * @return a byte array representing the decoded data.
 	 */
