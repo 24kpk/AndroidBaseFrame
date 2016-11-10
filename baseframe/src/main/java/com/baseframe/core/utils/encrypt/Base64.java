@@ -185,8 +185,7 @@ public class Base64 {
 	/**
 	 * decode the base 64 encoded String data.
 	 * 
-	 * TODO: Use the byte version to avoid duplication?
-	 * 
+	 *
 	 * @return a byte array representing the decoded data.
 	 */
 	public static byte[] decode(String data) {
