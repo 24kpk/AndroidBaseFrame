@@ -236,6 +236,7 @@ AndroidBaseFrame已经更新到[jitpack](https://jitpack.io/)上，使用Android
 
 ### Android6.0权限管理 ###
 [更多使用方法点这里](https://github.com/googlesamples/easypermissions)
+	
 	//以使用相机为例，在Activity/Fragment添加以下代码
 	
 	private static final int REQUEST_CODE_CAMERA = 101;//请求相机权限的requestCode
