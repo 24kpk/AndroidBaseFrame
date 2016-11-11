@@ -205,7 +205,7 @@ public abstract class BaseActivity extends AppCompatActivity
      * @return
      */
     protected boolean useComTitleLayout() {
-        return false;
+        return true;
     }
 
     /**
