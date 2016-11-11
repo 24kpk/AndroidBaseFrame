@@ -9,6 +9,5 @@ allprojects {
 
 
 dependencies {
-	        compile 'com.github.24kpk:AndroidBaseFrame:1.0.0'
+	        compile 'com.github.24kpk:AndroidBaseFrame:1.0.1'
 	}
-
