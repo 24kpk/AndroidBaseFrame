@@ -81,15 +81,25 @@ public abstract class BaseFragment extends Fragment
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
 
+    //以下为可选方法，根据需要进行重载.
+    //方法执行顺序：
+    //initData() --> initView(View parentView, Bundle savedInstanceState) --> register()
+
+    //只有第一次才会执行，这里可以做一些界面功能引导
     @Override public void onFirst() { }
     @Override public void initData() { }
     @Override public void initView(View parentView, Bundle savedInstanceState) { }
+    //这里可以注册一些广播、服务
     @Override public void register() { }
+    //注销广播、服务, 在onDestroyView()内部执行
     @Override public void unRegister() { }
+    //Fragment被切换到前台时调用
     @Override public void onFragmentShow() { }
+    //Fragment被切换到后台时调用
     @Override public void onFragmentHide() { }
     @Override public void showProgress() { }
     @Override public void hideProgress() { }
+    //view点击事件统一处理
     @Override public void viewClick(View v) { }
     @Override public void onPermissionsGranted(int requestCode, List<String> perms) { }
     @Override public void onPermissionsDenied(int requestCode, List<String> perms) { }
