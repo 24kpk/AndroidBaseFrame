@@ -2,4 +2,9 @@
 <resources>
     <!-- 主调色 -->
     <color name="xcolor_base">@color/baseWhite</color>
+
+    <color name="xcolorAccent">#FF4081</color>
+    <color name="xcolor_fea23f">#fea23f</color>
+    <color name="xcolor_333333">#333333</color>
+    <color name="xcolor_D5D4D4">#D5D4D4</color>
 </resources>

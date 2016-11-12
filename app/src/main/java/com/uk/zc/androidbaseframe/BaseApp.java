@@ -3,6 +3,7 @@ package com.uk.zc.androidbaseframe;
 import android.app.Application;
 
 import com.baseframe.core.BasicConfig;
+import com.orhanobut.logger.Logger;
 
 /**
  * author: C_CHEUNG
@@ -13,6 +14,6 @@ public class BaseApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        BasicConfig.getInstance(this).init();
+        BasicConfig.getInstance(this).initDir("BASE_APP").initExceptionHandler().initLog(true);
     }
 }
