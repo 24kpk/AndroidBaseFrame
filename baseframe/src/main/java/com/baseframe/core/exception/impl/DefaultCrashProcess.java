@@ -30,7 +30,7 @@ public class DefaultCrashProcess implements ICrashProcess {
 
     @Override public void onException(Thread thread, Throwable exception) throws Exception {
         final StringBuilder sb = new StringBuilder(LOG_NAME_PREFIX).append(
-                new SimpleDateFormat("yyyyMM").format(new Date(System.currentTimeMillis())))
+                new SimpleDateFormat("yyyyMMdd").format(new Date(System.currentTimeMillis())))
                                                                    .append(LOG_NAME_SUFFIX);
         final File file = new File(SDcardUtil.getLogDirPath(), sb.toString());
         if (!file.exists()) {
