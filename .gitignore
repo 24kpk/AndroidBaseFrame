@@ -1,12 +1,4 @@
-*.iml
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
-/captures
-.externalNativeBuild
+# Created by .ignore support plugin (hsz.mobi)
 ### Android template
 # Built application files
 *.apk
