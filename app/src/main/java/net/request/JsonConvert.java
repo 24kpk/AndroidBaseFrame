@@ -2,8 +2,6 @@ package net.request;
 
 import com.google.gson.Gson;
 import com.lzy.okgo.convert.Converter;
-import com.orhanobut.logger.Logger;
-
 
 import net.entity.BaseBean;
 

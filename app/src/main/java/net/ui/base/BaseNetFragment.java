@@ -10,7 +10,6 @@ import com.lzy.okgo.OkGo;
 import com.lzy.okgo.request.BaseRequest;
 import com.orhanobut.logger.Logger;
 
-import net.HttpUtil;
 import net.request.HttpUIListener;
 
 import okhttp3.Call;
@@ -44,14 +43,12 @@ public abstract class BaseNetFragment extends BaseFragment implements HttpUIList
 
     @Override
     public void onError(Call call, Response response, Exception e) {
-        Logger.e(HttpUtil.TAG,"-------------------REQUEST ERROR-------------------");
-        Logger.e(HttpUtil.TAG,e);
-        Logger.e(HttpUtil.TAG,"-------------------REQUEST ERROR-------------------");
+        Logger.e(e.getMessage());
     }
 
     @Override
     public void parseError(Call call, Exception e) {
-        Logger.e(HttpUtil.TAG,e);
+        Logger.e(e.getMessage());
     }
 
     @Override

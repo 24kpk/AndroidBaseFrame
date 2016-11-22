@@ -5,8 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.baseframe.core.fragment.BaseFragment;
-import com.orhanobut.logger.Logger;
+import com.baseframe.core.utils.ToastUtil;
 import com.uk.zc.androidbaseframe.R;
 import com.uk.zc.androidbaseframe.bean.UserBean;
 
@@ -57,16 +56,21 @@ public class TwoFragment extends BaseNetFragment {
             params.put("mid", "18729564163");
             params.put("pw", "12345678");
             params.put("pushsvc", "2");
-
-            HttpRequest.submitPostResponseJson(mActivity, POST_URL, params, POST_TAG, TwoFragment.this);
+            HttpRequest.submitPostResponseBean(mActivity, POST_URL, params, Object.class, POST_TAG, TwoFragment.this);
         }
     }
 
 
     @Override
-    public <T> void onSuccess(T t, Call call, Response response) {
-        BaseBean bean = (BaseBean) t;
-        UserBean usr = (UserBean) bean.getResult();
-        tv.setText(usr.getUser_id() + "");
+    public void onSuccess(BaseBean baseBean, Call call, Response response) {
+        if (baseBean!=null){
+            if (baseBean.getCode() == 1 && baseBean.getResult() !=null){
+                UserBean usr = (UserBean) baseBean.getResult();
+                tv.setText(usr.getUser_id() + "");
+            }else {
+                ToastUtil.showToast(mActivity,baseBean.getMsg());
+            }
+
+        }
     }
 }
