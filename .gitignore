@@ -39,3 +39,6 @@ captures/
 # Keystore files
 *.jks
 
+#local.properties
+local.properties
+
