@@ -56,7 +56,7 @@ public class TwoFragment extends BaseNetFragment {
             params.put("mid", "18729564163");
             params.put("pw", "12345678");
             params.put("pushsvc", "2");
-            HttpRequest.submitPostResponseBean(mActivity, POST_URL, params, Object.class, POST_TAG, TwoFragment.this);
+            HttpRequest.submitPostResponseBean(mActivity, POST_URL, params, UserBean.class, POST_TAG, TwoFragment.this);
         }
     }
 
@@ -73,4 +73,6 @@ public class TwoFragment extends BaseNetFragment {
 
         }
     }
+
+
 }
