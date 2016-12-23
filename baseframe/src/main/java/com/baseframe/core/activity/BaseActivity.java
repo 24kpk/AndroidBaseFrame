@@ -1,6 +1,7 @@
 package com.baseframe.core.activity;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.baseframe.core.R;
 import com.baseframe.core.fragment.BaseFragment;
@@ -37,13 +39,24 @@ public abstract class BaseActivity extends AppCompatActivity
     private   int          mActivityState;
     private   BaseFragment mCurrentFragment;
     protected Activity     mActivity;
+    protected Dialog mProgressDialog;
+    private TextView progressDialogMessage;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivity = this;
+
         initPre();
         BaseActivityStack.getInstance().addActivity(this);
         setContentView(getLayoutResId());
+
+        mProgressDialog = new Dialog(mActivity, R.style.xProgress_dialog);
+        mProgressDialog.setContentView(R.layout.com_progress_dialog_layout);
+        mProgressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        progressDialogMessage = (TextView) mProgressDialog.findViewById(R.id.id_tv_loadingmsg);
+        progressDialogMessage.setText("请求网络中...");
+        mProgressDialog.setCancelable(false);
+
         SharedPreferencesUtil spUtil = new SharedPreferencesUtil(this, SP_NAME);
         final String simpleName = this.getClass().getSimpleName();
         if (spUtil.getBooleanValue(simpleName, true)) {

@@ -1,6 +1,7 @@
 package com.baseframe.core.fragment;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,6 +10,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.baseframe.core.R;
 import com.baseframe.core.interfaces.IFragment;
 import com.baseframe.core.interfaces.IRegister;
 import com.baseframe.core.permissions.EasyPermissions;
@@ -26,6 +30,8 @@ public abstract class BaseFragment extends Fragment
     private static final String STATE_IS_HIDDEN = "isHidden";
 
     protected Activity mActivity;
+    protected Dialog mProgressDialog;
+    private TextView progressDialogMessage;
 
     @Override public void onAttach(Context context) {
         super.onAttach(context);
@@ -40,6 +46,14 @@ public abstract class BaseFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View parentView = inflater.inflate(getLayoutResId(), container, false);
+
+        mProgressDialog = new Dialog(mActivity, R.style.xProgress_dialog);
+        mProgressDialog.setContentView(R.layout.com_progress_dialog_layout);
+        mProgressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        progressDialogMessage = (TextView) mProgressDialog.findViewById(R.id.id_tv_loadingmsg);
+        progressDialogMessage.setText("请求网络中...");
+        mProgressDialog.setCancelable(false);
+
         SharedPreferencesUtil spUtil = new SharedPreferencesUtil(mActivity, SP_NAME);
         final String simpleName = this.getClass().getSimpleName();
         if (spUtil.getBooleanValue(simpleName, true)) {

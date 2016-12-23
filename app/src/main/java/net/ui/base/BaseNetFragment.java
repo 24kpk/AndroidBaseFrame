@@ -21,16 +21,10 @@ import okhttp3.Response;
  * description:
  */
 public abstract class BaseNetFragment extends BaseFragment implements HttpUIListener{
-    private ProgressDialog mProgressDialog;
 
     @Override
     public void initView(View parentView, Bundle savedInstanceState) {
         super.initView(parentView, savedInstanceState);
-        mProgressDialog = new ProgressDialog(mActivity);
-        mProgressDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        mProgressDialog.setCanceledOnTouchOutside(false);
-        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        mProgressDialog.setMessage("请求网络中...");
     }
 
     @Override

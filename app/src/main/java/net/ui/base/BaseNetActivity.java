@@ -20,16 +20,10 @@ import okhttp3.Response;
  * description: 带网络请求的Activity基类
  */
 public abstract class BaseNetActivity extends BaseActivity implements HttpUIListener{
-    private ProgressDialog mProgressDialog;
 
     @Override
     public void initView(Bundle savedInstanceState) {
         super.initView(savedInstanceState);
-        mProgressDialog = new ProgressDialog(mActivity);
-        mProgressDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        mProgressDialog.setCanceledOnTouchOutside(false);
-        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        mProgressDialog.setMessage("请求网络中...");
     }
 
     @Override
