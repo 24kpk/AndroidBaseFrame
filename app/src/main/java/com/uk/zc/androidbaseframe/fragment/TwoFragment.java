@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.baseframe.core.utils.Print;
 import com.baseframe.core.utils.ToastUtil;
 import com.uk.zc.androidbaseframe.R;
 import com.uk.zc.androidbaseframe.bean.UserBean;
@@ -49,6 +50,7 @@ public class TwoFragment extends BaseNetFragment {
     public void onClick(View v) {
         super.onClick(v);
         if (v == btn) {
+            Print.d("ddddd");
             Map<String, String> params = new HashMap<>();
             params.put("ct", "1");
             params.put("un", "18729564163");
@@ -56,7 +58,9 @@ public class TwoFragment extends BaseNetFragment {
             params.put("mid", "18729564163");
             params.put("pw", "12345678");
             params.put("pushsvc", "2");
-            HttpRequest.submitPostResponseBean(mActivity, POST_URL, params, UserBean.class, POST_TAG, TwoFragment.this);
+
+            Print.d(params);
+//            HttpRequest.submitPostResponseBean(mActivity, POST_URL, params, UserBean.class, POST_TAG, TwoFragment.this);
         }
     }
 
