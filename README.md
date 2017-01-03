@@ -21,7 +21,7 @@ AndroidBaseFrame已经更新到[jitpack](https://jitpack.io/)上，使用Android
 **Step 1** 在项目根目录 <B>build.gradle</B> 中添加
 >     allprojects {
 >         repositories {
->     	    ...
+>     	    ....
 >     	    maven { url "https://jitpack.io" }
 >             }
 >         }
