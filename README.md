@@ -133,20 +133,30 @@ AndroidBaseFrame已经更新到[jitpack](https://jitpack.io/)上，使用Android
 	
 	    //以下为可选方法，根据需要进行重载.
 	    //方法执行顺序：
-	    //initPre() --> initData() --> initView(Bundle savedInstanceState) --> register()
+	    //initPre()  --> initUI(Bundle savedInstanceState) --> initData()-->  addListener() --> register()
 	
-	    //这里可以注册一些广播、服务
-	    @Override public void register() { }
-	    //注销广播、服务,在onDestroy()内部执行
-	    @Override public void unRegister() { }
 	    //只有第一次才会执行，这里可以做一些界面功能引导
 	    @Override public void onFirst() { }
 	    //这个方法会在setContentView(...)方法之前执行
 	    @Override public void initPre() { }
-	    //view点击事件统一处理
-	    @Override public void viewClick(View v) { }
+	    @Override public void initData() { }
+	    @Override public void initUI(Bundle savedInstanceState) { }
 	    @Override public void showProgress() { }
 	    @Override public void hideProgress() { }
+	    //这里可以注册一些广播、服务
+	    @Override public void register() { }
+	    //注销广播、服务,在onDestroy()内部执行
+	    @Override public void unRegister() { }
+	    //注册监听器
+	    @Override public void addListener() {}
+	    //view点击事件统一处理
+	    @Override public void viewClick(View v) { }
+	    @Override public void onPermissionsGranted(int requestCode, List<String> perms) { }
+	    @Override public void onPermissionsDenied(int requestCode, List<String> perms) { }
+	
+	    @Override public void onClick(View v) {
+	        viewClick(v);
+	    }
 	}
 
 ###### Fragment示例 ######
@@ -164,24 +174,27 @@ AndroidBaseFrame已经更新到[jitpack](https://jitpack.io/)上，使用Android
 	
 	    //以下为可选方法，根据需要进行重载.
 	    //方法执行顺序：
-	    //initData() --> initView(View parentView, Bundle savedInstanceState) --> register()
+	    //initUI(View parentView, Bundle savedInstanceState) --> initData() --> addListener() -->  register()
 	
+	    //只有第一次才会执行，这里可以做一些界面功能引导
+	    @Override public void onFirst() { }
+	    @Override public void initData() { }
+	    @Override public void initUI(View parentView, Bundle savedInstanceState) { }
 	    //这里可以注册一些广播、服务
 	    @Override public void register() { }
 	    //注销广播、服务, 在onDestroyView()内部执行
 	    @Override public void unRegister() { }
-	    //只有第一次才会执行，这里可以做一些界面功能引导
-	    @Override public void onFirst() { }
-	    @Override public void initData() { }
-	    //view点击事件统一处理
-	    @Override public void viewClick(View v) { }
-	    @Override public void showProgress() { }
-	    @Override public void hideProgress() { }
-	
 	    //Fragment被切换到前台时调用
 	    @Override public void onFragmentShow() { }
 	    //Fragment被切换到后台时调用
 	    @Override public void onFragmentHide() { }
+	    //注册监听器
+	    @Override public void addListener() {}
+	
+	    @Override public void showProgress() { }
+	    @Override public void hideProgress() { }
+	    //view点击事件统一处理
+	    @Override public void viewClick(View v) { }
 	}
 ###### 启动页示例 ######
  

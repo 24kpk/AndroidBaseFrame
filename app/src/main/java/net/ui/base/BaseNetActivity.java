@@ -1,8 +1,6 @@
 package net.ui.base;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.view.Window;
 
 import com.baseframe.core.activity.BaseActivity;
 import com.lzy.okgo.OkGo;
@@ -22,8 +20,8 @@ import okhttp3.Response;
 public abstract class BaseNetActivity extends BaseActivity implements HttpUIListener{
 
     @Override
-    public void initView(Bundle savedInstanceState) {
-        super.initView(savedInstanceState);
+    public void initUI(Bundle savedInstanceState) {
+        super.initUI(savedInstanceState);
     }
 
     @Override

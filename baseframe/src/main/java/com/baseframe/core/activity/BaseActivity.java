@@ -63,8 +63,9 @@ public abstract class BaseActivity extends AppCompatActivity
             onFirst();
             spUtil.putBooleanValue(simpleName, false);
         }
+        initUI(savedInstanceState);
         initData();
-        initView(savedInstanceState);
+        addListener();
         register();
     }
 
@@ -78,20 +79,22 @@ public abstract class BaseActivity extends AppCompatActivity
 
     //以下为可选方法，根据需要进行重载.
     //方法执行顺序：
-    //initPre() --> initData()  --> initView(Bundle savedInstanceState) --> register()
+    //initPre()  --> initUI(Bundle savedInstanceState) --> initData()-->  addListener() --> register()
 
     //只有第一次才会执行，这里可以做一些界面功能引导
     @Override public void onFirst() { }
     //这个方法会在setContentView(...)方法之前执行
     @Override public void initPre() { }
     @Override public void initData() { }
-    @Override public void initView(Bundle savedInstanceState) { }
+    @Override public void initUI(Bundle savedInstanceState) { }
     @Override public void showProgress() { }
     @Override public void hideProgress() { }
     //这里可以注册一些广播、服务
     @Override public void register() { }
     //注销广播、服务,在onDestroy()内部执行
     @Override public void unRegister() { }
+    //注册监听器
+    @Override public void addListener() {}
     //view点击事件统一处理
     @Override public void viewClick(View v) { }
     @Override public void onPermissionsGranted(int requestCode, List<String> perms) { }

@@ -37,7 +37,12 @@ public interface IActivity {
     /**
      * 初始化控件
      */
-    void initView(Bundle savedInstanceState);
+    void initUI(Bundle savedInstanceState);
+
+    /**
+     * 注册监听器
+     */
+    void addListener();
 
     /**
      * 点击事件回调方法

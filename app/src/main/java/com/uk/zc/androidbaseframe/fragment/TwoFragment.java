@@ -38,11 +38,16 @@ public class TwoFragment extends BaseNetFragment {
     }
 
     @Override
-    public void initView(View parentView, Bundle savedInstanceState) {
-        super.initView(parentView, savedInstanceState);
+    public void initUI(View parentView, Bundle savedInstanceState) {
+        super.initUI(parentView, savedInstanceState);
         btn = (Button) parentView.findViewById(R.id.btn2);
         tv = (TextView) parentView.findViewById(R.id.text2);
 
+    }
+
+    @Override
+    public void addListener() {
+        super.addListener();
         btn.setOnClickListener(this);
     }
 
@@ -60,7 +65,7 @@ public class TwoFragment extends BaseNetFragment {
             params.put("pushsvc", "2");
 
             Print.d(params);
-//            HttpRequest.submitPostResponseBean(mActivity, POST_URL, params, UserBean.class, POST_TAG, TwoFragment.this);
+            HttpRequest.submitPostResponseBean(mActivity, POST_URL, params, UserBean.class, POST_TAG, TwoFragment.this);
         }
     }
 

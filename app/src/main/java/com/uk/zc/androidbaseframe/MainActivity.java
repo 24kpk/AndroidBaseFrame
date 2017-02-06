@@ -54,6 +54,31 @@ public class MainActivity extends BaseActivity{
     }
 
     @Override
+    public void initUI(Bundle savedInstanceState) {
+        super.initUI(savedInstanceState);
+
+//        ComTitleLayout c = (ComTitleLayout) findViewById(R.id.comTitleId);
+//        mMidText = c.getMiddleText();
+//        mMidText.setText(R.string.app_name);
+//        c.getReturnBtn().setVisibility(View.GONE);
+        mMainViewPager = (ViewPager)findViewById(R.id.m_main_viewpager);
+
+        mMainFwBtnTrue  = (Button)findViewById(R.id.m_main_fw_btn_true);
+        mMainSjBtnTrue  = (Button)findViewById(R.id.m_main_sj_btn_true);
+        mMainGzBtnTrue  = (Button)findViewById(R.id.m_main_gz_btn_true);
+        mMainLxrBtnTrue = (Button)findViewById(R.id.m_main_lxr_btn_true);
+        mMainWdBtnTrue = (Button) findViewById(R.id.m_main_wd_btn_true);
+
+        mButtonList.add(mMainFwBtnTrue);
+        mButtonList.add(mMainSjBtnTrue);
+        mButtonList.add(mMainGzBtnTrue);
+        mButtonList.add(mMainLxrBtnTrue);
+        mButtonList.add(mMainWdBtnTrue);
+
+    }
+
+
+    @Override
     public void initData() {
         super.initData();
         tabSpUtil = new SharedPreferencesUtil(this, TAB_SP_NAME);
@@ -68,38 +93,19 @@ public class MainActivity extends BaseActivity{
         mFragmentList.add(mFragmentThree);
         mFragmentList.add(mFragmentFour);
         mFragmentList.add(mFragmentFive);
+
+        initAdapter();
+        changAlpha(0);
     }
 
     @Override
-    public void initView(Bundle savedInstanceState) {
-        super.initView(savedInstanceState);
-
-//        ComTitleLayout c = (ComTitleLayout) findViewById(R.id.comTitleId);
-//        mMidText = c.getMiddleText();
-//        mMidText.setText(R.string.app_name);
-//        c.getReturnBtn().setVisibility(View.GONE);
-        mMainViewPager = (ViewPager)findViewById(R.id.m_main_viewpager);
-
-        mMainFwBtnTrue  = (Button)findViewById(R.id.m_main_fw_btn_true);
-        mMainSjBtnTrue  = (Button)findViewById(R.id.m_main_sj_btn_true);
-        mMainGzBtnTrue  = (Button)findViewById(R.id.m_main_gz_btn_true);
-        mMainLxrBtnTrue = (Button)findViewById(R.id.m_main_lxr_btn_true);
-        mMainWdBtnTrue = (Button) findViewById(R.id.m_main_wd_btn_true);
-
+    public void addListener() {
+        super.addListener();
         mMainFwBtnTrue.setOnClickListener(this);
         mMainSjBtnTrue.setOnClickListener(this);
         mMainGzBtnTrue.setOnClickListener(this);
         mMainLxrBtnTrue.setOnClickListener(this);
         mMainWdBtnTrue.setOnClickListener(this);
-
-        mButtonList.add(mMainFwBtnTrue);
-        mButtonList.add(mMainSjBtnTrue);
-        mButtonList.add(mMainGzBtnTrue);
-        mButtonList.add(mMainLxrBtnTrue);
-        mButtonList.add(mMainWdBtnTrue);
-
-        initAdapter();
-        changAlpha(0);
     }
 
     @Override

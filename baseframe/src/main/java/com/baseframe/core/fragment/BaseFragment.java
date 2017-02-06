@@ -60,8 +60,9 @@ public abstract class BaseFragment extends Fragment
             onFirst();
             spUtil.putBooleanValue(simpleName, false);
         }
+        initUI(parentView, savedInstanceState);
         initData();
-        initView(parentView, savedInstanceState);
+        addListener();
         return parentView;
     }
 
@@ -97,12 +98,12 @@ public abstract class BaseFragment extends Fragment
 
     //以下为可选方法，根据需要进行重载.
     //方法执行顺序：
-    //initData() --> initView(View parentView, Bundle savedInstanceState) --> register()
+    //initUI(View parentView, Bundle savedInstanceState) --> initData() --> addListener() -->  register()
 
     //只有第一次才会执行，这里可以做一些界面功能引导
     @Override public void onFirst() { }
     @Override public void initData() { }
-    @Override public void initView(View parentView, Bundle savedInstanceState) { }
+    @Override public void initUI(View parentView, Bundle savedInstanceState) { }
     //这里可以注册一些广播、服务
     @Override public void register() { }
     //注销广播、服务, 在onDestroyView()内部执行
@@ -111,6 +112,9 @@ public abstract class BaseFragment extends Fragment
     @Override public void onFragmentShow() { }
     //Fragment被切换到后台时调用
     @Override public void onFragmentHide() { }
+    //注册监听器
+    @Override public void addListener() {}
+
     @Override public void showProgress() { }
     @Override public void hideProgress() { }
     //view点击事件统一处理
