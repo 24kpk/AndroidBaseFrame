@@ -670,7 +670,7 @@ public class SwipeRefreshLayout extends ViewGroup {
     }
 
     private void startRefresh() {
-        if (!mLoading && !mRefreshing) {
+        if (!isLoading() && !isRefreshing()) {
             removeCallbacks(mCancel);
             mReturnToStartPosition.run();
             setRefreshing(true);
@@ -679,7 +679,7 @@ public class SwipeRefreshLayout extends ViewGroup {
     }
 
     private void startLoad() {
-        if (!mLoading && !mRefreshing) {
+        if (!isLoading() && !isRefreshing()) {
             removeCallbacks(mCancel);
             mReturnToStartPosition.run();
             setLoading(true);
