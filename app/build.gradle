@@ -23,6 +23,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile project(':baseframe')
-    compile 'com.lzy.net:okgo:+'
+    compile 'com.lzy.net:okgo:2.1.4'
     compile 'com.google.code.gson:gson:+'
 }
